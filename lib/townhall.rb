@@ -13,13 +13,12 @@ end
 
 def get_townhall_urls
 
-
-  array_townhall_url = []
-  init_url('http://annuaire-des-mairies.com/val-d-oise.html').css('a').each do |node|
-    array_townhall_url << node.gsub(/(./95)/)
+array_townhall_url = []
+  init_url('http://annuaire-des-mairies.com/val-d-oise.html').css('a.lientxt').each do |node|
+    array_townhall_url << node['href'][5..-1] 
   end
 puts array_townhall_url
-
+  
 #page.xpath(xpath_mairies)['href']
 
   #puts  init_url('http://annuaire-des-mairies.com/val-d-oise.html').xpath('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[2]/p[2]/object/table/tbody/tr[2]/td/table/tbody/tr/td[1]/p/@href')
