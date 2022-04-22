@@ -1,4 +1,4 @@
-require_relative '../lib/00_crypto.rb'
+require_relative '../lib/crypto.rb'
 
 describe "the crypto method" do
   it "should not return nil" do
